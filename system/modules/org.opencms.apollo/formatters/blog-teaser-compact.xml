@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
+  <NewFormatter language="en">
+    <NiceName><![CDATA[%(key.formatter.a-blog.teaser.compact)]]></NiceName>
+    <Type><![CDATA[a-blog]]></Type>
+    <Jsp>
+      <link type="WEAK">
+        <target><![CDATA[/system/modules/org.opencms.apollo/formatters/blog-teaser-compact.jsp]]></target>
+        <uuid>8ed4e94e-d64a-11e5-9ef3-0242ac11002b</uuid>
+      </link>
+    </Jsp>
+    <Rank><![CDATA[900]]></Rank>
+    <Match>
+      <Types>
+        <ContainerType><![CDATA[element]]></ContainerType>
+        <ContainerType><![CDATA[blog]]></ContainerType>
+      </Types>
+    </Match>
+    <Preview>false</Preview>
+    <SearchContent>true</SearchContent>
+    <AutoEnabled>true</AutoEnabled>
+    <Detail>false</Detail>
+    <Display>true</Display>
+    <NestedContainers>false</NestedContainers>
+    <Setting>
+      <PropertyName><![CDATA[cssWrapper]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.cssclass)]]></DisplayName>
+      <Description><![CDATA[%(key.apollo.setting.cssclass.description)]]></Description>
+      <Widget><![CDATA[string]]></Widget>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[teaserLength]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.teaserlength)]]></DisplayName>
+      <Widget><![CDATA[string]]></Widget>
+      <Default><![CDATA[150]]></Default>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[showDate]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.showdate)]]></DisplayName>
+      <Widget><![CDATA[checkbox]]></Widget>
+      <Default><![CDATA[true]]></Default>
+    </Setting>
+  </NewFormatter>
+</NewFormatters>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
+  <NewFormatter language="en">
+    <NiceName><![CDATA[%(key.formatter.a-slider.default)]]></NiceName>
+    <Type><![CDATA[a-slider]]></Type>
+    <Jsp>
+      <link type="WEAK">
+        <target><![CDATA[/system/modules/org.opencms.apollo/formatters/slider-standard.jsp]]></target>
+        <uuid>b741cb4c-73c2-11e5-92dc-15b01ffdc6a6</uuid>
+      </link>
+    </Jsp>
+    <Rank><![CDATA[1000]]></Rank>
+    <Match>
+      <Types>
+        <ContainerType><![CDATA[element]]></ContainerType>
+        <ContainerType><![CDATA[slider]]></ContainerType>
+      </Types>
+    </Match>
+    <Preview>false</Preview>
+    <SearchContent>true</SearchContent>
+    <AutoEnabled>true</AutoEnabled>
+    <Detail>false</Detail>
+    <Display>false</Display>
+    <NestedContainers>false</NestedContainers>
+    <HeadIncludeCss>
+      <CssLink>
+        <link type="WEAK">
+          <target><![CDATA[/system/modules/org.opencms.apollo.theme/resources/plugins/revolution-slider/rs-plugin/css/settings.css]]></target>
+          <uuid>5e8afaf2-ac01-11e6-b64d-0242ac11002b</uuid>
+        </link>
+      </CssLink>
+    </HeadIncludeCss>
+    <HeadIncludeJs>
+      <JavascriptLink>
+        <link type="WEAK">
+          <target><![CDATA[/system/modules/org.opencms.apollo.theme/resources/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js]]></target>
+          <uuid>5eb7b069-ac01-11e6-b64d-0242ac11002b</uuid>
+        </link>
+      </JavascriptLink>
+      <JavascriptLink>
+        <link type="WEAK">
+          <target><![CDATA[/system/modules/org.opencms.apollo.theme/resources/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js]]></target>
+          <uuid>5eb4a327-ac01-11e6-b64d-0242ac11002b</uuid>
+        </link>
+      </JavascriptLink>
+    </HeadIncludeJs>
+    <Setting>
+      <PropertyName><![CDATA[hidetitle]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.hidetitle)]]></DisplayName>
+      <Widget><![CDATA[checkbox]]></Widget>
+      <Default><![CDATA[true]]></Default>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[showCopy]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.image.text.copy)]]></DisplayName>
+      <Widget><![CDATA[checkbox]]></Widget>
+      <Default><![CDATA[true]]></Default>
+    </Setting>
+  </NewFormatter>
+</NewFormatters>

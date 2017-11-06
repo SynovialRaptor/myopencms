@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
+  <NewFormatter language="en">
+    <NiceName><![CDATA[%(key.formatter.a-event.teaser.elaborate)]]></NiceName>
+    <Type><![CDATA[a-event]]></Type>
+    <Jsp>
+      <link type="WEAK">
+        <target><![CDATA[/system/modules/org.opencms.apollo/formatters/event-teaser-elaborate.jsp]]></target>
+        <uuid>fe8e9df9-c5b5-11e5-a73e-0242ac11002b</uuid>
+      </link>
+    </Jsp>
+    <Rank><![CDATA[1000]]></Rank>
+    <Match>
+      <Types>
+        <ContainerType><![CDATA[element]]></ContainerType>
+        <ContainerType><![CDATA[event]]></ContainerType>
+      </Types>
+    </Match>
+    <Preview>false</Preview>
+    <SearchContent>true</SearchContent>
+    <AutoEnabled>true</AutoEnabled>
+    <Detail>false</Detail>
+    <Display>true</Display>
+    <NestedContainers>false</NestedContainers>
+    <Setting>
+      <PropertyName><![CDATA[cssWrapper]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.cssclass)]]></DisplayName>
+      <Description><![CDATA[%(key.apollo.setting.cssclass.description)]]></Description>
+      <Widget><![CDATA[string]]></Widget>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[teaserLength]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.teaserlength)]]></DisplayName>
+      <Widget><![CDATA[string]]></Widget>
+      <Default><![CDATA[200]]></Default>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[showDate]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.showdate)]]></DisplayName>
+      <Widget><![CDATA[checkbox]]></Widget>
+      <Default><![CDATA[false]]></Default>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[displayOption]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.displayoptions)]]></DisplayName>
+      <Widget><![CDATA[select]]></Widget>
+      <Default><![CDATA[showCalendar]]></Default>
+      <WidgetConfig><![CDATA[
+        showCalendar:%(key.apollo.setting.displayoption.showcalendar)|
+        hideCalendar:%(key.apollo.setting.displayoption.hidecalendar)|
+        largeImage:%(key.apollo.setting.displayoption.showimagehidecalendar)|
+        smallImage:%(key.apollo.setting.displayoption.showsmallimagehidecalendar)
+      ]]></WidgetConfig>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[ieffect]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.image.effect.label)]]></DisplayName>
+      <Widget><![CDATA[selectcombo]]></Widget>
+      <Default><![CDATA[none]]></Default>
+      <WidgetConfig><![CDATA[
+        none:%(key.apollo.setting.image.effect.none)|
+        ap-kenburns-animation:%(key.apollo.setting.image.effect.kenburns)|
+        ap-raise-animation:%(key.apollo.setting.image.effect.raise)|
+        ap-raise-animation ap-kenburns-animation:%(key.apollo.setting.image.effect.raise-kenburns)
+      ]]></WidgetConfig>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[showExpired]]></PropertyName>
+      <Widget><![CDATA[hidden]]></Widget>
+      <Default><![CDATA[true]]></Default>
+    </Setting>
+  </NewFormatter>
+</NewFormatters>

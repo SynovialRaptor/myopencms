@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
+  <NewFormatter language="en">
+    <NiceName><![CDATA[%(key.formatter.a-section.iconbox)]]></NiceName>
+    <Type><![CDATA[a-section]]></Type>
+    <Jsp>
+      <link type="WEAK">
+        <target><![CDATA[/system/modules/org.opencms.apollo/formatters/section-iconbox.jsp]]></target>
+        <uuid>34e3840f-eaaf-11e5-99f8-0242ac11002b</uuid>
+      </link>
+    </Jsp>
+    <Rank><![CDATA[5000]]></Rank>
+    <Match>
+      <Types>
+        <ContainerType><![CDATA[element]]></ContainerType>
+        <ContainerType><![CDATA[section]]></ContainerType>
+      </Types>
+    </Match>
+    <Preview>false</Preview>
+    <SearchContent>true</SearchContent>
+    <AutoEnabled>true</AutoEnabled>
+    <Detail>false</Detail>
+    <NestedContainers>false</NestedContainers>
+    <Setting>
+      <PropertyName><![CDATA[wrapperclass]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.cssclass)]]></DisplayName>
+      <Description><![CDATA[%(key.apollo.setting.cssclass.description)]]></Description>
+      <Widget><![CDATA[selectcombo]]></Widget>
+      <WidgetConfig><![CDATA[%(page-property:apollo.css.iconbox)]]></WidgetConfig>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[iconclass]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.iconclass)]]></DisplayName>
+      <Description><![CDATA[%(key.apollo.setting.iconclass.description)]]></Description>
+      <Widget><![CDATA[selectcombo]]></Widget>
+      <WidgetConfig><![CDATA[%(page-property:apollo.section.icon:
+        thumbs-o-up:%(key.apollo.setting.iconclass.hand)|
+        info:%(key.apollo.setting.iconclass.info)|
+        heart:%(key.apollo.setting.iconclass.heart)|
+        globe:%(key.apollo.setting.iconclass.globe)|
+        cloud:%(key.apollo.setting.iconclass.cloud)|
+        exclamation-circle:%(key.apollo.setting.iconclass.exclamation-circle)|
+        star:%(key.apollo.setting.iconclass.star)|
+        paper-plane:%(key.apollo.setting.iconclass.paper-plane)|
+        chevron-up:%(key.apollo.setting.iconclass.chevron)|
+        arrow-up:%(key.apollo.setting.iconclass.arrow)|
+        check:%(key.apollo.setting.iconclass.check)|
+        file-text-o:%(key.apollo.setting.iconclass.document)|
+        folder-o:%(key.apollo.setting.iconclass.folder)|
+        link:%(key.apollo.setting.iconclass.link)|
+        download:%(key.apollo.setting.iconclass.download)
+        )]]></WidgetConfig>
+    </Setting>
+  </NewFormatter>
+</NewFormatters>

@@ -1,0 +1,88 @@
+<!--
+	XSD file to define an RSS channel
+-->
+<!-- 1. Root Element -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+		
+	<!-- 2. Define the location of the schema location -->
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/com.deepthoughts.rss/schemas/rsschannelsrc.xsd"/>
+	
+	<!-- 3. Root element name and type of our XML type -->
+	<xsd:element name="RSSChannelDefs" type="OpenCmsRSSChannelDefs"/>
+	
+	<!-- 4. Definition of the type described above -->
+	<xsd:complexType name="OpenCmsRSSChannelDefs">
+		<xsd:sequence>
+			<xsd:element name="RSSChannelDef" type="OpenCmsRSSChannelDef" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 5. Data field definitions -->
+	<xsd:complexType name="OpenCmsRSSChannelDef">
+		<xsd:sequence>
+			<!-- Required Channel Fields -->
+			<xsd:element name="Title" type="OpenCmsString" 				minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Description" type="OpenCmsString" 		minOccurs="1" maxOccurs="1" />
+			
+			<!-- Optional -->
+			<xsd:element name="Copyright" 		type="OpenCmsString"	minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Author"			type="OpenCmsString" 	minOccurs="0" maxOccurs="1" />
+			<xsd:element name="PublishDate"		type="OpenCmsDateTime"	minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Image" 			type="OpenCmsVfsFile"	minOccurs="0" maxOccurs="1" />
+			<xsd:element name="ImageTitle"		type="OpenCmsString"	minOccurs="0" maxOccurs="1" />
+			 
+			<xsd:element name="divider"		 	type="OpenCmsString"	minOccurs="1" maxOccurs="1" />
+
+			<!-- RSS Item Definition -->
+			<xsd:element name="ChannelSource"	type="OpenCmsRssChannelSrc"	minOccurs="1" maxOccurs="25" />
+			
+		</xsd:sequence>
+		
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:annotation>
+		<xsd:appinfo>
+			<!-- Mappings allow data fields to be mapped to content properties -->
+			<mappings>
+				<mapping element="Title" mapto="property:Title" />
+				<mapping element="Description" mapto="property:Title" />
+				<mapping element="PublishDate" mapto="attribute:datereleased" />
+			</mappings>
+
+			<!-- Default values can be set for each field type -->
+			<defaults>
+				<default element="PublishDate" value="${currenttime}"/>
+				<default element="divider" value="&lt;div style='background:#f0f0f0; border:solid 1px grey; border-radius: 1em; padding: 2px; font-family:Segoe UI,trebuchet ms,arial,sans-serif,tahoma,verdana; '&gt;
+				&lt;b&gt;For RSS Title and Description Field Mappings, use this syntax:&lt;/b&gt;&lt;br&gt;&lt;pre&gt;
+				To map to meta-value use: &lt;b&gt;meta.metaname&lt;/b&gt;&lt;br&gt;
+					  where metaname is one of the following: UserCreated, UserLastModified,&lt;br&gt;
+					   DateContent, DateCreated, DateExpired, DateLastModified, DateReleased&lt;br&gt;
+				To map to a property value use: &lt;b&gt;property.propertyname+&lt;/b&gt;&lt;br&gt;
+			    	  where propertyname is any valid property&lt;br&gt;
+			    	     (adding the optional plus sign at the end will search the parent)&lt;br&gt;
+				To map to content field use: &lt;b&gt;field.fieldname[size+-]&lt;/b&gt;&lt;br&gt;
+					  where fieldname is the name of the content field&lt;br&gt;
+					     (adding the optional size will truncate the size in the feed listing)&lt;br&gt;
+					  use + to truncate up to the next period or end&lt;br&gt;
+					  or use - to truncate down&lt;/pre&gt;&lt;/div&gt;"/>
+			</defaults>
+
+			<layouts>
+				<!-- Horizonal Rule for a divider -->
+				<layout element="divider" widget="DisplayWidget" />
+				
+				<!-- Image picker -->
+				<layout element="Image" widget="ImageGalleryWidget"/>
+			</layouts>
+
+			<!-- UI Localization -->
+			<resourcebundle name="com.deepthoughts.rss.workplace"/>
+
+			<!-- Previewing URI -->
+			<preview uri="${previewtempfile}" />
+		</xsd:appinfo>
+	</xsd:annotation>  
+
+</xsd:schema>

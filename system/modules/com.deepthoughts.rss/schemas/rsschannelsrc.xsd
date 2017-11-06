@@ -1,0 +1,56 @@
+<!--
+    XSD file to define an RSS item
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+		
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:element name="RssChannelSrcs" type="OpenCmsRssChannelSrcs"/>
+	
+	<xsd:complexType name="OpenCmsRssChannelSrcs">
+		<xsd:sequence>
+			<xsd:element name="RssChannelSrc" type="OpenCmsRssChannelSrc" minOccurs="0"	maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- Data field definitions -->
+	<xsd:complexType name="OpenCmsRssChannelSrc">
+		<xsd:sequence>
+			<!-- Source specification -->
+			<!-- XSD data type of the feed source -->
+			<xsd:element name="SourceContentType" 		type="OpenCmsString"	minOccurs="1" maxOccurs="1" />
+			
+			<!-- VFS file location of the feed source -->
+			<xsd:element name="SourceLocation"	type="OpenCmsVfsFile"	minOccurs="1" maxOccurs="1" />
+
+			<!-- Upper size limit -->
+			<xsd:element name="FeedLimit"	type="OpenCmsString"	minOccurs="1" maxOccurs="1" />
+
+			<!-- Source Field Mappings -->
+			<xsd:element name="SourceTitleField"	type="OpenCmsString"	minOccurs="1" maxOccurs="1" />
+			<xsd:element name="SourceDescField"		type="OpenCmsString"	minOccurs="1" maxOccurs="1" />
+			<xsd:element name="SourceAuthorField"	type="OpenCmsString"	minOccurs="1" maxOccurs="1" />
+		</xsd:sequence>
+		
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:annotation>
+		<xsd:appinfo>
+
+			<!-- Layouts -->
+			<layouts>
+				<!-- List of Content Types -->
+				<layout element="SourceContentType" widget="CustomSourceSelectWidget"
+					configuration="source='com.deepthoughts.widgets.sources.ContentTypesDS'|exclude='rsschanneldef'"/>
+					
+				<!--  Author Field Mapping -->
+				<layout element="SourceAuthorField" widget="SelectorWidget"
+					configuration="meta.UserCreated:Use Created By Field|meta.UserLastModified:Use Updated By Field"/>
+			</layouts>
+
+			<!-- UI Localization -->
+			<resourcebundle name="com.deepthoughts.rss.workplace"/>
+		</xsd:appinfo>
+	</xsd:annotation>  
+
+</xsd:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
+  <NewFormatter language="en">
+    <NiceName><![CDATA[Standard Form]]></NiceName>
+    <Type><![CDATA[a-webform]]></Type>
+    <Jsp>
+      <link type="WEAK">
+        <target><![CDATA[/system/modules/org.opencms.apollo.template.webform/formatters/webform.jsp]]></target>
+        <uuid>7e207aa7-e6a8-11e5-8ea1-0242ac11002b</uuid>
+      </link>
+    </Jsp>
+    <Rank><![CDATA[1000]]></Rank>
+    <Match>
+      <Types>
+        <ContainerType><![CDATA[element]]></ContainerType>
+        <ContainerType><![CDATA[form]]></ContainerType>
+      </Types>
+    </Match>
+    <Preview>false</Preview>
+    <SearchContent>true</SearchContent>
+    <AutoEnabled>true</AutoEnabled>
+    <Detail>false</Detail>
+    <NestedContainers>false</NestedContainers>
+    <Setting>
+      <PropertyName><![CDATA[wrapperclass]]></PropertyName>
+      <DisplayName><![CDATA[%(key.apollo.setting.cssclass)]]></DisplayName>
+      <Description><![CDATA[%(key.apollo.setting.cssclass.description)]]></Description>
+      <Widget><![CDATA[selectcombo]]></Widget>
+      <WidgetConfig><![CDATA[%(page-property:apollo.css.iconbox)]]></WidgetConfig>
+    </Setting>
+  </NewFormatter>
+</NewFormatters>

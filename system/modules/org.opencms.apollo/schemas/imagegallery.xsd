@@ -1,0 +1,46 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd" />
+
+	<xsd:element name="ApolloImageGallerys" type="OpenCmsApolloImageGallerys" />
+
+	<xsd:complexType name="OpenCmsApolloImageGallerys">
+		<xsd:sequence>
+			<xsd:element name="ApolloImageGallery" type="OpenCmsApolloImageGallery"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OpenCmsApolloImageGallery">
+		<xsd:sequence>
+			<xsd:element name="Title" type="OpenCmsString" />
+			<xsd:element name="ImageFolder" type="OpenCmsVfsFile" />
+			<xsd:element name="GalleryTitle" type="OpenCmsString" minOccurs="0" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="required" />
+	</xsd:complexType>
+
+	<xsd:annotation>
+		<xsd:appinfo>
+			<resourcebundle name="org.opencms.apollo.template.imagegallery.messages" />
+			<mappings>
+				<mapping element="GalleryTitle" mapto="property:Title" useDefault="true" />
+				<mapping element="GalleryTitle" mapto="urlName" useDefault="true" />
+			</mappings>
+			<defaults>
+				<default element="Title" value="%(key.title.a-imagegallery)" />
+				<default element="GalleryTitle" value="%(page_title)%(no_prefix:: )%(value:Title)" resolveMacros="false" />
+			</defaults>
+			<layouts>
+				<layout element="ImageFolder" widget="VfsFileWidget" configuration="{galleryselect}" />
+			</layouts>
+			<relations />
+			<searchsettings containerPageOnly="true">
+				<searchsetting element="ImageFolder" searchcontent="false" />
+				<searchsetting element="GalleryTitle" searchcontent="false" />
+			</searchsettings>
+			<visibilities>
+				<visibility element="GalleryTitle" params="ROLE.GALLERY_EDITOR" />
+			</visibilities>
+		</xsd:appinfo>
+	</xsd:annotation>
+</xsd:schema>

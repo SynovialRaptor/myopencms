@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RSSChannelDefs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/com.deepthoughts.rss/schemas/rsschanneldef.xsd">
+  <RSSChannelDef language="en">
+    <Title><![CDATA[Deep Thoughts]]></Title>
+    <Description><![CDATA[Deep Thoughts RSS Feed]]></Description>
+    <Copyright><![CDATA[Copyright 2007]]></Copyright>
+    <ManagingEditor><![CDATA[Dan Liliedahl]]></ManagingEditor>
+    <webMaster><![CDATA[admin@efoundry.com]]></webMaster>
+    <pubDate>1193169780000</pubDate>
+    <Image>
+      <link type="WEAK">
+        <target><![CDATA[/sites/default/demopages/photoalbum/img_015.jpg]]></target>
+        <uuid>b1d316ee-11b7-11db-91cd-fdbae480bac9</uuid>
+      </link>
+    </Image>
+    <divider><![CDATA[<div style='background:#f0f0f0; border:solid 1px grey; border-radius: 1em; padding: 2px; font-family:Segoe UI,trebuchet ms,arial,sans-serif,tahoma,verdana; '>     <b>For Source Title and Description fields, use this syntax:</b><br><pre>     To map to meta-value use: <b>meta.metaname</b><br>        where metaname is one of the following: UserCreated, UserLastModified,<br>         DateContent, DateCreated, DateExpired, DateLastModified, DateReleased<br>     To map to a property value use: <b>property.propertyname+</b><br>           where propertyname is any valid property<br>              (adding the optional plus sign at the end will search the parent)<br>     To map to content field use: <b>field.fieldname[size+-]</b><br>        where fieldname is the name of the content field<br>           (adding the optional size will truncate the size in the feed listing)<br>        use + to truncate up to the next period or end<br>        or use - to truncate down</pre></div>]]></divider>
+    <ChannelSource>
+      <SourceContentType><![CDATA[blogentry]]></SourceContentType>
+      <SourceLocation>
+        <link type="WEAK">
+          <target><![CDATA[/sites/default/Blogs/]]></target>
+          <uuid>68306d12-36ef-11dc-8d9c-223344556677</uuid>
+        </link>
+      </SourceLocation>
+      <SourceTitleField><![CDATA[property.Title]]></SourceTitleField>
+      <SourceDescField><![CDATA[field.BlogText]]></SourceDescField>
+      <SourceAuthorField><![CDATA[meta.UserCreated]]></SourceAuthorField>
+    </ChannelSource>
+  </RSSChannelDef>
+</RSSChannelDefs>

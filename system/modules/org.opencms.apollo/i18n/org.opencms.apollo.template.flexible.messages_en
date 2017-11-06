@@ -1,0 +1,12 @@
+desc.a-flexible=Any type of markup (HTML, JavaScript) that can be placed on a page.
+fileicon.a-flexible=Flexible content
+formatter.a-flexible.default=Default flexible content
+label.ApolloFlexibleElement.Code=Code
+label.ApolloFlexibleElement.Code.help=Use this to enter HTML-Code or JavaScript. 
+label.ApolloFlexibleElement.GalleryTitle=Gallery title
+label.ApolloFlexibleElement.GalleryTitle.help=Used to identify the content in the OpenCms internal gallery. Not shown in the output page.
+label.ApolloFlexibleElement.RequireReload=Page reload required
+label.ApolloFlexibleElement.RequireReload.help=Check this is a page must be reloaded when this element is placed on it. Usually required for proper initialization of JavaScript.
+label.ApolloFlexibleElement.Title=Title
+label.ApolloFlexibleElement.Title.help=The title of the flexible element. It can be hidden with a setting.
+title.a-flexible=New flexible content

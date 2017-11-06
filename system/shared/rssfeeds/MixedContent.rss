@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RSSChannelDefs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/com.deepthoughts.rss/schemas/rsschanneldef.xsd">
+  <RSSChannelDef language="en">
+    <Title><![CDATA[Alkacon FlexCache Documentation]]></Title>
+    <Description><![CDATA[RSS Feed of Alkacon Documentation]]></Description>
+    <Copyright><![CDATA[Copyright 2007]]></Copyright>
+    <PublishDate>1193169780000</PublishDate>
+    <divider><![CDATA[<div style='background:#f0f0f0; border:solid 1px grey; border-radius: 1em; padding: 2px; font-family:Segoe UI,trebuchet ms,arial,sans-serif,tahoma,verdana; '>     <b>For Source Title and Description fields, use this syntax:</b><br><pre>     To map to meta-value use: <b>meta.metaname</b><br>        where metaname is one of the following: UserCreated, UserLastModified,<br>         DateContent, DateCreated, DateExpired, DateLastModified, DateReleased<br>     To map to a property value use: <b>property.propertyname+</b><br>           where propertyname is any valid property<br>              (adding the optional plus sign at the end will search the parent)<br>     To map to content field use: <b>field.fieldname[size+-]</b><br>        where fieldname is the name of the content field<br>           (adding the optional size will truncate the size in the feed listing)<br>        use + to truncate up to the next period or end<br>        or use - to truncate down</pre></div>]]></divider>
+    <ChannelSource>
+      <SourceContentType><![CDATA[xmlpage]]></SourceContentType>
+      <SourceLocation>
+        <link type="WEAK">
+          <target><![CDATA[/sites/default/alkacon-documentation/documentation_flexcache/]]></target>
+        </link>
+      </SourceLocation>
+      <FeedLimit/>
+      <SourceTitleField><![CDATA[property.Title]]></SourceTitleField>
+      <SourceDescField><![CDATA[field.body[200+]]]></SourceDescField>
+      <SourceAuthorField><![CDATA[meta.UserCreated]]></SourceAuthorField>
+    </ChannelSource>
+    <ChannelSource>
+      <SourceContentType><![CDATA[blogentry]]></SourceContentType>
+      <SourceLocation>
+        <link type="WEAK">
+          <target><![CDATA[/sites/default/Blogs/]]></target>
+          <uuid>0df9441e-b8cf-11e7-ba86-34e6d71c241e</uuid>
+        </link>
+      </SourceLocation>
+      <FeedLimit/>
+      <SourceTitleField><![CDATA[property.Title]]></SourceTitleField>
+      <SourceDescField><![CDATA[field.BlogTest[200+]]]></SourceDescField>
+      <SourceAuthorField><![CDATA[meta.UserLastModified]]></SourceAuthorField>
+    </ChannelSource>
+    <ChannelSource>
+      <SourceContentType><![CDATA[xmlpage]]></SourceContentType>
+      <SourceLocation>
+        <link type="WEAK">
+          <target><![CDATA[/sites/default/alkacon-documentation/links/]]></target>
+        </link>
+      </SourceLocation>
+      <FeedLimit/>
+      <SourceTitleField><![CDATA[property.Title]]></SourceTitleField>
+      <SourceDescField><![CDATA[field.body[200+]]]></SourceDescField>
+      <SourceAuthorField><![CDATA[meta.UserCreated]]></SourceAuthorField>
+    </ChannelSource>
+  </RSSChannelDef>
+</RSSChannelDefs>

@@ -1,0 +1,25 @@
+<!-- ============================================================
+    XSD content definition file for the BlogComment type
+ =============================================================== -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd" />
+    <xsd:element name="BlogComments" type="OpenCmsBlogComments"/>
+    
+    <xsd:complexType name="OpenCmsBlogComments">
+        <xsd:sequence>
+            <xsd:element name="BlogComment" type="OpenCmsBlogComment" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="OpenCmsBlogComment">
+        <xsd:sequence>
+            <xsd:element name="User" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="Date" type="OpenCmsDateTime" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="Comment" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="Approved" type="OpenCmsBoolean" minOccurs="1" maxOccurs="1" />
+        </xsd:sequence>
+        <xsd:attribute name="language" type="OpenCmsLocale" use="optional"/>
+    </xsd:complexType>
+</xsd:schema>
+

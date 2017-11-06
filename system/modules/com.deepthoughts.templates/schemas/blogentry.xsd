@@ -1,0 +1,83 @@
+<!--
+    XSD file for the BlogEntry content type
+-->
+<!-- 1. Root Element -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+		elementFormDefault="qualified">
+		
+	<!-- 2. Define the location of the schema location -->
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/com.deepthoughts.templates/schemas/blogcomment.xsd"/>
+
+	<!-- 3. Root element name and type of our XML type -->
+	<xsd:element name="BlogEntrys" type="OpenCmsBlogEntrys"/>
+	
+	<!-- 4. Definition of the type described above -->
+	<xsd:complexType name="OpenCmsBlogEntrys">
+		<xsd:sequence>
+			<xsd:element name="BlogEntry" type="OpenCmsBlogEntry" minOccurs="0"
+			      maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- 5. Data field definitions -->
+	<xsd:complexType name="OpenCmsBlogEntry">
+		<xsd:sequence>
+			<xsd:element name="Title" type="OpenCmsString" 		minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Date" type="OpenCmsDateTime" 	minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Image" type="OpenCmsVfsFile" 	minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Alignment" type="OpenCmsString" 	minOccurs="1" maxOccurs="1" />
+			<xsd:element name="BlogText" type="OpenCmsHtml" 	minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Category" type="OpenCmsString" 	minOccurs="0" maxOccurs="10" />
+			<xsd:element name="Comment" type="OpenCmsBlogComment" 	minOccurs="0" maxOccurs="10" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="required"/>
+	</xsd:complexType>
+
+	<!-- 6. Annotations are used to define additional settings for our content type -->
+	<xsd:annotation>
+		<xsd:appinfo>
+			<!-- 7. Mappings allow data fields to be mapped to content properties -->
+			<mappings>
+				<mapping element="Title" mapto="property:Title" />
+				<mapping element="Date" mapto="attribute:datereleased" />
+			</mappings>
+
+			<!-- 8. Validation rules may be create for field entry -->
+			<validationrules>
+				<rule element="BlogText" regex="!.*[Bl]og.*" type="warning" message="${key.editor.warning.BlogEntry.dontallowblog|${validation.path}}"/>
+			</validationrules>
+
+			<!-- 9. Default values can be set for each field type -->
+			<defaults>
+				<default element="Date" value="${currenttime}"/>
+				<default element="Alignment" value="left"/>
+			</defaults>
+
+			<!-- 10. This section controls which widgets are used to edit the data fields -->
+			<layouts>
+				<layout element="Image" widget="ImageGalleryWidget"/>
+				<layout element="Alignment" widget="SelectorWidget"
+					configuration="left|right|center" />
+				<layout element="Category" widget="SelectorWidget"
+					configuration="silly|prudent|hopeful|fearful|worrisome|awesome" />
+				<layout element="BlogText" widget="HtmlWidget"/>
+			</layouts>
+
+			<!-- 11. UI Localization -->
+			<resourcebundle name="com.deepthoughts.templates.workplace"/>
+
+			<!-- 12. this section controls relationship checking -->
+			<relations>
+				<relation element="Image" type="strong" invalidate="node" />
+			</relations>
+
+			<!-- 13. Previewing URI -->
+			<preview uri="${previewtempfile}" />
+
+			<!-- 14. Model Folder -->
+			<modelfolder uri="/system/modules/com.deepthoughts.templates/Models/" />
+		</xsd:appinfo>
+	</xsd:annotation>  
+	
+</xsd:schema>
